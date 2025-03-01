@@ -1,5 +1,8 @@
 {
   "name": "LiveVibe",
-  "integrations": {},
-  "type": "angular"
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "browser": "production"
 }
