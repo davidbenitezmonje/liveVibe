@@ -1,3 +1,25 @@
-    <ion-app>
+    <!-- <ion-app>
       <ion-router-outlet></ion-router-outlet>
+    </ion-app> -->
+    <ion-app>
+      <ion-menu side="start" menuId="first" contentId="main-content">
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Menú</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-list>
+            <ion-item routerLink="/home">Home</ion-item>
+            <ion-item routerLink="/eventos">Eventos</ion-item>
+            <ion-item routerLink="/calendario">Calendario</ion-item>
+            <ion-item routerLink="/usuarios">Usuarios</ion-item>
+            <ion-item (click)="logout()">Cerrar Sesión</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+
+      <div id="main-content">
+        <ion-router-outlet id="main-content"></ion-router-outlet>
+      </div>
     </ion-app>

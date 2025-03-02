@@ -1,45 +1,45 @@
-ion-content {
-  display: block;
-  padding: 20px;
-}
+// ion-content {
+//   display: block;
+//   padding: 20px;
+// }
 
-ion-header {
-  background-color: #3880ff;
-  color: white;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 100vh; /* Ajuste de altura para pantallas grandes */
-}
+// ion-header {
+//   background-color: #3880ff;
+//   color: white;
+// }
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   text-align: center;
+//   height: 100vh; /* Ajuste de altura para pantallas grandes */
+// }
 
-/* Tamaños de fuente y espaciado para diferentes pantallas */
-@media (max-width: 600px) { /* Teléfonos pequeños */
-  h1 {
-    font-size: 20px;
-  }
-  p {
-    font-size: 14px;
-  }
-}
+// /* Tamaños de fuente y espaciado para diferentes pantallas */
+// @media (max-width: 600px) { /* Teléfonos pequeños */
+//   h1 {
+//     font-size: 20px;
+//   }
+//   p {
+//     font-size: 14px;
+//   }
+// }
 
-@media (min-width: 601px) and (max-width: 1024px) { /* Tablets */
-  h1 {
-    font-size: 26px;
-  }
-  p {
-    font-size: 18px;
-  }
-}
+// @media (min-width: 601px) and (max-width: 1024px) { /* Tablets */
+//   h1 {
+//     font-size: 26px;
+//   }
+//   p {
+//     font-size: 18px;
+//   }
+// }
 
-@media (min-width: 1025px) { /* Pantallas más grandes */
-  h1 {
-    font-size: 32px;
-  }
-  p {
-    font-size: 20px;
-  }
-}
+// @media (min-width: 1025px) { /* Pantallas más grandes */
+//   h1 {
+//     font-size: 32px;
+//   }
+//   p {
+//     font-size: 20px;
+//   }
+// }

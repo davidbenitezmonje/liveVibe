@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,6 +17,7 @@ export class LoginComponent {
       password: ['', Validators.required],
     });
   }
+
   onLogin() {
     if (this.loginForm.valid) {
       const email = this.loginForm.value.email;
@@ -28,8 +30,13 @@ export class LoginComponent {
       // Verificar si las credenciales son correctas
       if (email === 'admin@gmail.com' && password === 'Tad_R1_is22*p') {
         console.log('Credenciales correctas');
-        localStorage.setItem('userToken', 'token123');
-        this.router.navigate(['/home']);
+        localStorage.setItem('userToken', 'token123'); // Simula el login
+        this.router.navigate(['/home']); // Redirigir al home después del login
+
+        this.router.navigate(['/home']).then(() => {
+          console.log('Redirigiendo a /home');
+          window.location.reload();
+        });
       } else {
         console.log('Credenciales incorrectas');
       }
@@ -37,5 +44,13 @@ export class LoginComponent {
       console.log('Formulario inválido');
     }
   }
+
+  // logout() {
+  //   localStorage.removeItem('userToken'); // Eliminar el token de autenticación
+  //   this.router.navigate(['/login']).then(() => {
+  //     console.log('Redirigiendo a /login');
+  //     window.location.reload(); // Recargar la página para asegurarse de que el formulario de login se muestre correctamente
+  //   });
+  // }
 
 }

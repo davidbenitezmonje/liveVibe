@@ -1,45 +1,152 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
+/* 🎨 Variables para diseño responsive */
+:root {
+  --font-size-xs: 12px; /* Tamaño de fuente más pequeño */
+  --font-size-sm: 14px;
+  --font-size-md: 15px;
+  --font-size-lg: 17px;
 
-/* Core CSS required for Ionic components to work properly */
-@import "@ionic/angular/css/core.css";
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 30px;
 
-/* Basic CSS for apps built with Ionic */
-@import "@ionic/angular/css/normalize.css";
-@import "@ionic/angular/css/structure.css";
-@import "@ionic/angular/css/typography.css";
-@import "@ionic/angular/css/display.css";
-
-/* Optional CSS utils that can be commented out */
-@import "@ionic/angular/css/padding.css";
-@import "@ionic/angular/css/float-elements.css";
-@import "@ionic/angular/css/text-alignment.css";
-@import "@ionic/angular/css/text-transformation.css";
-@import "@ionic/angular/css/flex-utils.css";
-
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
-
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-// @import "@ionic/angular/css/palettes/dark.system.css";
-body {
-  background-color: white;
+  --primary-color: #007bff;
+  --background-color: #371e44;
+  --highlight-color: #1ff7f9; /* Color de texto y botones */
 }
-ion-content {
-  display: block;
-  padding: 20px;
-  background-color: #f8f9fa;
+
+/* 🌎 Estilos globales */
+body, ion-content {
+  --background: var(--background-color) !important;
+  background-color: var(--background-color) !important;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+/* 🏠 Contenedor del Login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Centrado vertical */
+  padding: var(--spacing-md);
+}
+
+/* 📏 Card del formulario */
+ion-card {
+  width: 100%;
+  max-width: 380px; /* Reducido para un mejor aspecto */
+  background: var(--background-color);
+  text-align: center;
+  padding: var(--spacing-md);
+  margin: auto;
+  box-shadow: none; /* Eliminar sombra */
+  border: none; /* Eliminar borde */
+}
+
+/* 🎯 Inputs más pequeños y con espaciado equilibrado */
+ion-item {
+  --background: white; /* Fondo blanco */
+  --border-radius: 8px;
+  margin-bottom: var(--spacing-sm);
+  padding: 8px 16px; /* Espaciado uniforme */
+}
+
+ion-label {
+  font-size: var(--font-size-xs); /* Reducir el tamaño de la fuente */
+  color: black !important; /* Cambiar el color del texto a negro */
+}
+
+/* 🖋️ Estilo para los inputs: Usuario y Contraseña */
+ion-item ion-label,
+ion-item ion-input {
+  color: black !important; /* Cambié aquí el color a negro */
+}
+
+/* 🎯 Color del texto en los inputs */
+ion-input {
+  font-size: var(--font-size-xs); /* Reducir el tamaño de la fuente */
+  color: black !important; /* Color del texto */
+  --background: white !important; /* Fondo blanco */
+  --placeholder-color: var(--background-color) !important; /* Color del placeholder */
+}
+
+ion-input::part(native) {
+  background-color: white !important; /* Fondo blanco */
+}
+
+ion-input::part(label) {
+  color: black !important; /* Cambiar el color del texto del label a negro */
+}
+
+ion-input:focus {
+  color: black !important; /* Color del texto cuando el input está enfocado */
+}
+
+/* ❌ Mensaje de error */
+.error-message {
+  color: red;
+  font-size: var(--font-size-sm);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.mBackground-color{
+  background-color: #371e44;
+}
+.label-text{
+  font-style: var(--highlight-color);
+}
+
+/* 🔘 Botón de Login */
+ion-button {
+  margin-top: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  background-color: var(--highlight-color); /* Color del botón */
+  border: none;
+}
+
+/* 📏 Enlace "Regístrarse" */
+.register-link {
+  margin-top: var(--spacing-sm);
+  text-align: center;
+}
+
+.register-text {
+  color: white; /* Color blanco del enlace */
+  text-decoration: none; /* Sin subrayado */
+  font-size: var(--font-size-sm);
+}
+
+/* 📏 Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+  :root {
+    --font-size-md: 14px;
+    --spacing-md: 16px;
+  }
+  .login-container {
+    padding: 40px 20px;
+  }
+  ion-card {
+    max-width: 90%;
+  }
+}
+
+/* 📏 Ajustes para teléfonos muy pequeños */
+@media (max-width: 480px) {
+  :root {
+    --font-size-md: 13px;
+    --spacing-md: 12px;
+  }
+}
+
+/* 🎨 Estilos para la imagen */
+.logo {
+  width: 112%; /* Aumenta la imagen en un 12% */
+  border: 5px solid #371e44; /* Borde de color */
+  border-radius: 10px; /* Borde con esquinas redondeadas */
+  margin-bottom: var(--spacing-md); /* Espaciado debajo de la imagen */
+  object-fit: contain; /* Para mantener la relación de aspecto */
 }

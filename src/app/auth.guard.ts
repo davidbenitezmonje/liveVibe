@@ -19,3 +19,5 @@ export class AuthGuard implements CanActivate {
     return true; // Si está autenticado, permitir acceso
   }
 }
+
+

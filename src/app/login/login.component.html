@@ -1,23 +1,45 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
-    <ion-title>Iniciar Sesión</ion-title>
+    <ion-title>LiveVibe</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content class="ion-padding">
-  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-    <!-- Campo de email  y password -->
-    <ion-input formControlName="email" type="email" required label="Usuario"></ion-input>
-    <ion-input formControlName="password" type="password" required label="Contraseña"></ion-input>
+<ion-content class="ion-padding login-container">
+  <ion-card>
+    <ion-card-header class="logo-container">
+      <img src="assets/global/logo.jpg" alt="Logo de LiveVibe" class="logo">
+    </ion-card-header>
 
+    <ion-card>
+      <ion-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <ion-list class="mBackground-color">
 
-    <!-- Mensaje de error si el formulario no es válido -->
-    <div *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched)">
-      <p class="error-message">Por favor, completa correctamente los campos.</p>
-    </div>
+            <ion-item>
+              <ion-input label="Usuario" formControlName="email" type="email" required aria-label="Ingrese su usuario"></ion-input>
+            </ion-item>
 
-    <!-- Botón de envío -->
-    <ion-button expand="full" type="submit" [disabled]="loginForm.invalid" aria-label="Enviar formulario de inicio de sesión">Conectar</ion-button>
+            <ion-item>
+              <ion-input label="Contraseña" formControlName="password" type="password" required aria-label="Ingrese su contraseña"></ion-input>
+            </ion-item>
 
-  </form>
+            <p class="error-message" *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched)">
+              ⚠️ Completa correctamente los campos.
+            </p>
+          </ion-list>
+
+          <!-- Botón de inicio de sesión -->
+          <ion-button expand="block" type="submit" [disabled]="loginForm.invalid">
+            Conectar
+          </ion-button>
+
+          <!-- Enlace para registrarse -->
+          <div class="register-link">
+            <a href="#" class="register-text">Regístrarse</a>
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-card>
 </ion-content>
